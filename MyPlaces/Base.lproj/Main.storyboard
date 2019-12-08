@@ -6,7 +6,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--MainScreen-->
+        <!--My Places-->
         <scene sceneID="e1R-Mr-eX3">
             <objects>
                 <tableViewController id="VJA-uP-FzN" customClass="MainScreenTableViewController" customModule="MyPlaces" customModuleProvider="target" sceneMemberID="viewController">
@@ -29,7 +29,7 @@
                             <outlet property="delegate" destination="VJA-uP-FzN" id="Ix0-v2-qdV"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="MainScreen" id="ten-vV-pdV"/>
+                    <navigationItem key="navigationItem" title="My Places" id="ten-vV-pdV"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3pY-27-sev" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -43,6 +43,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sTv-hY-qj8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="24"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
