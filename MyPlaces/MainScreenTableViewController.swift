@@ -16,6 +16,15 @@ class MainScreenTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        for family: String in UIFont.familyNames
+//        {
+//            print(family)
+//            for names: String in UIFont.fontNames(forFamilyName: family)
+//            {
+//                print("== \(names)")
+//            }
+//        }
 
         
     }
@@ -55,4 +64,5 @@ class MainScreenTableViewController: UITableViewController {
     }
     */
 
+    @IBAction func cancelAction(_ segue: UIStoryboardSegue) {}
 }

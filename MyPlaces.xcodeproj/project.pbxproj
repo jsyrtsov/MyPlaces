@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		281E34DF239D89BC00136DEE /* ubuntu_[allfont.ru].ttf in Resources */ = {isa = PBXBuildFile; fileRef = 281E34DE239D89BC00136DEE /* ubuntu_[allfont.ru].ttf */; };
 		289E9D14239BEB4000B7D6F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289E9D13239BEB4000B7D6F0 /* AppDelegate.swift */; };
 		289E9D16239BEB4000B7D6F0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289E9D15239BEB4000B7D6F0 /* SceneDelegate.swift */; };
 		289E9D1B239BEB4000B7D6F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 289E9D19239BEB4000B7D6F0 /* Main.storyboard */; };
@@ -18,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		281E34DE239D89BC00136DEE /* ubuntu_[allfont.ru].ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ubuntu_[allfont.ru].ttf"; path = "../../../../../Desktop/ubuntu_[allfont.ru].ttf"; sourceTree = "<group>"; };
+		281E34E1239D8B3A00136DEE /* ubuntu.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ubuntu.ttf; sourceTree = "<group>"; };
 		289E9D10239BEB4000B7D6F0 /* MyPlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		289E9D13239BEB4000B7D6F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		289E9D15239BEB4000B7D6F0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +44,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		281E34E0239D8B2A00136DEE /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				281E34E1239D8B3A00136DEE /* ubuntu.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		289E9D07239BEB3F00B7D6F0 = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +77,8 @@
 				289E9D2B239D67B300B7D6F0 /* PlaceModel.swift */,
 				289E9D29239D612B00B7D6F0 /* CustomTableViewCell.swift */,
 				289E9D19239BEB4000B7D6F0 /* Main.storyboard */,
+				281E34DE239D89BC00136DEE /* ubuntu_[allfont.ru].ttf */,
+				281E34E0239D8B2A00136DEE /* Fonts */,
 				289E9D1C239BEB4100B7D6F0 /* Assets.xcassets */,
 				289E9D1E239BEB4100B7D6F0 /* LaunchScreen.storyboard */,
 				289E9D21239BEB4100B7D6F0 /* Info.plist */,
@@ -133,6 +146,7 @@
 			files = (
 				289E9D20239BEB4100B7D6F0 /* LaunchScreen.storyboard in Resources */,
 				289E9D1D239BEB4100B7D6F0 /* Assets.xcassets in Resources */,
+				281E34DF239D89BC00136DEE /* ubuntu_[allfont.ru].ttf in Resources */,
 				289E9D1B239BEB4000B7D6F0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
