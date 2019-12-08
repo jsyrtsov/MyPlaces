@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		281DD864239D9BCD00A00ABF /* ubuntu.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 281DD863239D9BCD00A00ABF /* ubuntu.ttf */; };
+		28810370239DA36000917648 /* NewPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2881036F239DA36000917648 /* NewPlaceViewController.swift */; };
 		289E9D14239BEB4000B7D6F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289E9D13239BEB4000B7D6F0 /* AppDelegate.swift */; };
 		289E9D16239BEB4000B7D6F0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289E9D15239BEB4000B7D6F0 /* SceneDelegate.swift */; };
 		289E9D1B239BEB4000B7D6F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 289E9D19239BEB4000B7D6F0 /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		281DD863239D9BCD00A00ABF /* ubuntu.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ubuntu.ttf; sourceTree = "<group>"; };
+		2881036F239DA36000917648 /* NewPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlaceViewController.swift; sourceTree = "<group>"; };
 		289E9D10239BEB4000B7D6F0 /* MyPlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		289E9D13239BEB4000B7D6F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		289E9D15239BEB4000B7D6F0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,8 +76,9 @@
 				289E9D13239BEB4000B7D6F0 /* AppDelegate.swift */,
 				289E9D15239BEB4000B7D6F0 /* SceneDelegate.swift */,
 				289E9D27239BFE1600B7D6F0 /* MainScreenTableViewController.swift */,
-				289E9D2B239D67B300B7D6F0 /* PlaceModel.swift */,
 				289E9D29239D612B00B7D6F0 /* CustomTableViewCell.swift */,
+				289E9D2B239D67B300B7D6F0 /* PlaceModel.swift */,
+				2881036F239DA36000917648 /* NewPlaceViewController.swift */,
 				289E9D19239BEB4000B7D6F0 /* Main.storyboard */,
 				289E9D1C239BEB4100B7D6F0 /* Assets.xcassets */,
 				289E9D1E239BEB4100B7D6F0 /* LaunchScreen.storyboard */,
@@ -157,6 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				289E9D28239BFE1600B7D6F0 /* MainScreenTableViewController.swift in Sources */,
+				28810370239DA36000917648 /* NewPlaceViewController.swift in Sources */,
 				289E9D14239BEB4000B7D6F0 /* AppDelegate.swift in Sources */,
 				289E9D2C239D67B300B7D6F0 /* PlaceModel.swift in Sources */,
 				289E9D2A239D612B00B7D6F0 /* CustomTableViewCell.swift in Sources */,
