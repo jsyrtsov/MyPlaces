@@ -240,11 +240,22 @@
                     <navigationItem key="navigationItem" title="Добавить новое" id="yfr-b9-1l3">
                         <barButtonItem key="leftBarButtonItem" title="Отмена" id="7tG-e9-5PF">
                             <connections>
-                                <segue destination="1JA-yW-Bbc" kind="unwind" unwindAction="cancelAction:" id="246-gf-zmy"/>
+                                <action selector="cancelButtonAction:" destination="8XV-Lh-hVd" id="ZQh-t4-u9R"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Сохранить" id="T8h-XQ-IJz"/>
+                        <barButtonItem key="rightBarButtonItem" title="Сохранить" id="T8h-XQ-IJz">
+                            <connections>
+                                <segue destination="1JA-yW-Bbc" kind="unwind" unwindAction="unwindSegue:" id="3FE-6O-fGN"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="placeImage" destination="1DW-fB-87T" id="GHs-Cq-u1D"/>
+                        <outlet property="placeLocationTextField" destination="dyT-BN-69s" id="7dv-9Y-u11"/>
+                        <outlet property="placeNameTextField" destination="Dhc-nv-tpP" id="iU0-cg-PWK"/>
+                        <outlet property="placeTypeTextField" destination="xhO-Sw-v12" id="Gcm-4h-wLr"/>
+                        <outlet property="saveButton" destination="T8h-XQ-IJz" id="kHL-Cu-X8f"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Am0-TS-4f7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="1JA-yW-Bbc" userLabel="Exit" sceneMemberID="exit"/>
