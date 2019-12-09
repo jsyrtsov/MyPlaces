@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainScreenTableViewController: UITableViewController {
+class PlacesViewController: UITableViewController {
     
     let places = Place.getPlaces()
     
