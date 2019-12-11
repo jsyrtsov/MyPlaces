@@ -12,7 +12,7 @@ class NewPlaceViewController: UITableViewController {
     
     var imageIsChanged = false      //для отслеживания загрузил ли фото пользователь
     
-    var newPlace: Place?
+    var newPlace = Place()
 
     @IBOutlet weak var placeImage: UIImageView!
     @IBOutlet weak var saveButton: UIBarButtonItem!
@@ -23,6 +23,11 @@ class NewPlaceViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        DispatchQueue.main.async {
+            self.newPlace.savePlaces()
+        }
+        
         
         tableView.tableFooterView = UIView()  //скрываю ненужные разделители ячеек. пусть отображает только три задействованные ячейки
         saveButton.isEnabled = false          //пока юзер не введет название заведения, кнопка сохранить будет неактивна
@@ -74,11 +79,11 @@ class NewPlaceViewController: UITableViewController {
         }
         
         
-        newPlace = Place(name: placeNameTextField.text!,
-                         location: placeLocationTextField.text,
-                         type: placeTypeTextField.text,
-                         image: image,
-                         testImage: nil)
+//        newPlace = Place(name: placeNameTextField.text!,
+//                         location: placeLocationTextField.text,
+//                         type: placeTypeTextField.text,
+//                         image: image,
+//                         testImage: nil)
     }
     @IBAction func cancelButtonAction(_ sender: Any) {            //скрываем вью
     

@@ -6,18 +6,17 @@
 //  Copyright © 2019 Evgeny Syrtsov. All rights reserved.
 //
 
-import UIKit
+import RealmSwift
 
 
-struct Place {
+class Place: Object {
     
-    var name: String
-    var location: String?
-    var type: String?
-    var image: UIImage?
-    var testImage: String?
+    @objc dynamic var name = ""
+    @objc dynamic var location: String?
+    @objc dynamic var type: String?
+    @objc dynamic var imageData: Data?
      
-    static let restaurantNames = ["Burger King",
+    let restaurantNames = ["Burger King",
                            "McDonalds",
                            "KFC",
                            "Кавказская пленница",
@@ -28,15 +27,24 @@ struct Place {
                            "Та самая на средном",
                            "Буфетъ Обед"]
  
-    static func getPlaces() -> [Place] {
-        
-        var placesArray = [Place]()
+    func savePlaces() {
         
         for i in restaurantNames {
-            placesArray.append(Place(name: i, location: "Нижний Новгород", type: "Фаст-фуд", image: nil, testImage: i))
+            
+            let image = UIImage(named: i)
+            guard let imageData = image?.pngData() else { return }        //переводим картинку из УИимейдж в тип Дата потому что Рилм не поддерживает УИКит
+            
+            let newPlace = Place()
+            
+            newPlace.name = i
+            newPlace.location = "Нижний Новгород"
+            newPlace.type = "Фаст-Фуд"
+            newPlace.imageData = imageData
+            
+            StorageManager.saveObject(newPlace)            //вызываем метод, он сохраняет все заведения в базу
         }
         
-        return placesArray
+        return
         
     }
 }
