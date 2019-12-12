@@ -44,7 +44,19 @@ class PlacesViewController: UITableViewController {
     }
     
     // MARK: - Table view delegate
-    
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        let place = places[indexPath.row]
+        let deleteAction = UITableViewRowAction(style: .default, title: "Удалить") { (_, _) in
+            
+            StorageManager.deleteObject(place)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            
+        }
+        
+        return [deleteAction]
+        
+    }
     
 
     /*
