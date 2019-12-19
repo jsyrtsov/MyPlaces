@@ -59,21 +59,24 @@ class PlacesViewController: UITableViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "showDetail" {
+            guard let indexPath = tableView.indexPathForSelectedRow else { return }
+            let place = places[indexPath.row]
+            let newPlaceVC = segue.destination as! NewPlaceViewController
+            newPlaceVC.currentPlace = place
+        }
     }
-    */
+    
 
     @IBAction func unwindSegue(_ segue: UIStoryboardSegue) {           //по нажатию на кнопку Сохранить сваливаемся на мейнскрин при помощи анвинд сегвея
         guard let newPlaceVC = segue.source as? NewPlaceViewController else {
             return
         }
-        newPlaceVC.saveNewPlace()                                       //вызываем метод сохраняющий параметры НьюПлейса в структуру
+        newPlaceVC.savePlace()                                       //вызываем метод сохраняющий параметры НьюПлейса в структуру
         tableView.reloadData()                                          //обновляем таблицу
         
     }

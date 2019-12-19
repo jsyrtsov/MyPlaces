@@ -10,6 +10,8 @@ import UIKit
 
 class NewPlaceViewController: UITableViewController {
     
+    var currentPlace: Place?
+    
     var imageIsChanged = false      //для отслеживания загрузил ли фото пользователь
 
     @IBOutlet weak var placeImage: UIImageView!
@@ -25,6 +27,7 @@ class NewPlaceViewController: UITableViewController {
         tableView.tableFooterView = UIView()  //скрываю ненужные разделители ячеек. пусть отображает только три задействованные ячейки
         saveButton.isEnabled = false          //пока юзер не введет название заведения, кнопка сохранить будет неактивна
         placeNameTextField.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
+        setupEditScreen()
         
     }
 
@@ -62,7 +65,7 @@ class NewPlaceViewController: UITableViewController {
         }
     }
    
-    func saveNewPlace() {                                   //заполняем структуру Плейс этим методом
+    func savePlace() {                                   //заполняем структуру Плейс этим методом
         
         var image: UIImage?
         if imageIsChanged {                   //если пользователь не выбрал фотку, то подставляем заглушку свою
@@ -77,9 +80,51 @@ class NewPlaceViewController: UITableViewController {
                              location: placeLocationTextField.text,
                              type: placeTypeTextField.text,
                              imageData: imageData)
+        if currentPlace != nil {
+            try! realm.write {
+                currentPlace?.name = newPlace.name
+                currentPlace?.location = newPlace.location
+                currentPlace?.imageData = newPlace.imageData
+                currentPlace?.type = newPlace.type
+            }
+        } else {
+            StorageManager.saveObject(newPlace)
+
+        }
         
-        StorageManager.saveObject(newPlace)
     }
+    
+    private func setupEditScreen() {           //тут настраиваем вью в котором редактируем заведение, передаем в него все данные
+        
+        if currentPlace != nil {
+            
+            setupNavigationBar()            //настраиваем НавигейшнБар
+            
+            imageIsChanged = true
+            
+            guard let data = currentPlace?.imageData, let image = UIImage(data: data) else { return }
+             
+            placeImage.image = image
+            placeImage.contentMode = .scaleAspectFill
+            placeLocationTextField.text = currentPlace?.location
+            placeNameTextField.text = currentPlace?.name
+            placeTypeTextField.text = currentPlace?.type
+            
+        }
+    }
+    
+    private func setupNavigationBar() {
+        
+        if let topItem = navigationController?.navigationBar.topItem {                //делаем кнопку возврата без подписи
+            topItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        }
+        
+        navigationItem.leftBarButtonItem = nil    //убираем кнопку отмены, пусть будет стандартная кнопка назад
+        title = currentPlace?.name                //делаем заголовок = название редактируемого заведения
+        saveButton.isEnabled = true               //кнопка сохр была выключена, мы ее включаем
+         
+    }
+    
     @IBAction func cancelButtonAction(_ sender: Any) {            //скрываем вью
     
         dismiss(animated: true)
